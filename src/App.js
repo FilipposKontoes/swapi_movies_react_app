@@ -1,5 +1,11 @@
 import './App.css';
 import styled from 'styled-components';
+import NavBar from "./Components/NavBar/NavBar";
+
+
+
+
+
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -7,9 +13,12 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
+
+
 function App() {
   return (
     <div className="App">
+      <NavBar/>
       <header className="App-header">
         <Title>TEST</Title>
         <p>
