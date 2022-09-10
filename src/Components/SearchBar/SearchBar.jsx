@@ -4,22 +4,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div`
     position: relative;
+    display: flex;
     flex: 1;
-    border-radius: 5px;
     padding-left: 15px;
 `;
 
 const TextInput = styled.input`
-    padding-left: 24px;
-    width: 100%;
+    margin-right: 10px;
+    padding: 10px 24px;
+    width: fit-content;
+    border-radius: 5px;
+    flex:1;
+    border: 3px solid #ccc;
 `;
 
 //https://stackoverflow.com/questions/45871439/before-and-after-pseudo-classes-used-with-styled-components
 //δεν παίζει το :before
 const FavIcon = styled.span`    
         position: absolute;
-         left: 20px;
-        top: 1px;
+         left: 22px;
+        top: 9px;
+        color: #ccc;
 `;
 
 export default function SearchBar () {
