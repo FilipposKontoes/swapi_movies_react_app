@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import useFetch from "./Hooks/useFetch";
 import NavBar from "./Components/NavBar/NavBar";
 import ListItem from "./Components/ListItem/ListItem";
 import ItemDescription from "./Components/ItemDescription/ItemDescription";
@@ -9,22 +9,9 @@ import {
 } from "./styled";
 
 function App() {
-  useEffect(() => {
-    fetch("https://swapi.dev/api/films/", {
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => {
-        if (response.ok) return response.json();
-
-        throw new Error("Fetch Failed");
-      })
-      .then((data) => {
-        console.log(`${data}`);
-      });
-  }, []);
-  //οταν deps είναι κενό array τρέχει μόνο μια φορά στο render!
+    const {data, isLoading, isError} = useFetch();
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <MainContentWrapper>
         <ListItemWrapper>
