@@ -13,15 +13,19 @@ import {
 function App() {
     const {data, isLoading, isError} = useFetch();
     const [selectedMovie, setSelectedMovie] = useState(0);
+    const [userInput, setUserInput] = useState('');
 
+    function filterMovies (movie) {
+        return movie.title.toUpperCase().includes(userInput.toUpperCase());
+    }
     // useEffect(() => {console.log(movieId)},[movieId]);
 
   return (
     <div>
-      <NavBar />
+      <NavBar userInput={userInput} setUserInput={setUserInput} />
       <MainContentWrapper>
         <ListItemsWrapper>
-            {data?.results?.map((movie) => {
+            {data?.results?.filter(filterMovies).map((movie) => {
                 return (<ListItem key={movie.episode_id} movie={movie} setSelectedMovie={setSelectedMovie} />)
             })}
         </ListItemsWrapper>

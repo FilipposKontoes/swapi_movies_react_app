@@ -29,8 +29,7 @@ const FavIcon = styled.span`
   color: #ccc;
 `;
 
-export default function SearchBar() {
-    const [userInput, setUserInput] = useState('');
+export default function SearchBar({userInput, setUserInput}) {
 
     function updateUserInput(event) {
         setUserInput(event.target.value);
