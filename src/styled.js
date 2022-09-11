@@ -9,7 +9,7 @@ export const MainContentWrapper = styled.div`
   }
 `;
 
-export const ListItemWrapper = styled.div`
+export const ListItemsWrapper = styled.div`
   flex: 1;
   border-right: 2px solid;
   border-right-color: gray;

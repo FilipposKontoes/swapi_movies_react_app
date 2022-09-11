@@ -24,12 +24,13 @@ const MovieDate = styled.span`
   text-align: right;
 `;
 
-export default function ListItem() {
+export default function ListItem({episode, title, date, setMovieId}) {
+
   return (
-    <MovieItemWrapper>
-      <MovieEpisode>Episode 13</MovieEpisode>
-      <MovieName>Tafos kai Tyfos</MovieName>
-      <MovieDate>1908-03-08</MovieDate>
+    <MovieItemWrapper onClick={() => { setMovieId(episode-1);}}>
+      <MovieEpisode>Episode {episode}</MovieEpisode>
+      <MovieName>{title}</MovieName>
+      <MovieDate>{date}</MovieDate>
     </MovieItemWrapper>
   );
 }
