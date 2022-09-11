@@ -16,5 +16,14 @@ export const ListItemsWrapper = styled.div`
 `;
 
 export const DescriptionWrapper = styled.div`
+   display: flex;
+   justify-content: center;
   flex: 1;
+`;
+
+export const NoMovieWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 `;

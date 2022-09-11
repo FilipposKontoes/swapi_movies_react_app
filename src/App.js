@@ -7,6 +7,7 @@ import {
   MainContentWrapper,
   ListItemsWrapper,
   DescriptionWrapper,
+    NoMovieWrapper
 } from "./styled";
 
 
@@ -30,7 +31,7 @@ function App() {
             })}
         </ListItemsWrapper>
         <DescriptionWrapper>
-          <ItemDescription selectedMovie={selectedMovie} />
+            {selectedMovie ? <ItemDescription selectedMovie={selectedMovie}/> : <NoMovieWrapper><p>No movie selected</p></NoMovieWrapper>}
         </DescriptionWrapper>
       </MainContentWrapper>
     </div>
