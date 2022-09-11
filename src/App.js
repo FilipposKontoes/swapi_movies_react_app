@@ -1,38 +1,22 @@
 import './App.css';
-import styled from 'styled-components';
 import NavBar from "./Components/NavBar/NavBar";
-
-
-
-
-
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-
+import ListItem from "./Components/ListItem/ListItem";
+import ItemDescription from "./Components/ItemDescription/ItemDescription";
+import {MainContentWrapper, ListItemWrapper, DescriptionWrapper} from "./styled";
 
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <header className="App-header">
-        <Title>TEST</Title>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <MainContentWrapper>
+          <ListItemWrapper>
+            <ListItem/>
+          </ListItemWrapper>
+          <DescriptionWrapper>
+            <ItemDescription/>
+          </DescriptionWrapper>
+        </MainContentWrapper>
     </div>
   );
 }
