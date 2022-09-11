@@ -8,12 +8,12 @@ const MovieFullTitle = styled.h2`
   font-weight: bold;
 `;
 
-export default function ItemDescription({title, description, director}) {
+export default function ItemDescription({selectedMovie}) {
   return (
     <ItemDescriptionWrapper>
-      <MovieFullTitle>{title}</MovieFullTitle>
-      <p>{description}</p>
-      <span>Directed by: {director}</span>
+      <MovieFullTitle>{selectedMovie?.title}</MovieFullTitle>
+      <p>{selectedMovie?.opening_crawl}</p>
+      <span>Directed by: {selectedMovie?.director}</span>
     </ItemDescriptionWrapper>
   );
 }

@@ -12,9 +12,9 @@ import {
 
 function App() {
     const {data, isLoading, isError} = useFetch();
-    const [movieId, setMovieId] = useState(0);
+    const [selectedMovie, setSelectedMovie] = useState(0);
 
-    useEffect(() => {console.log(movieId)},[movieId])
+    // useEffect(() => {console.log(movieId)},[movieId]);
 
   return (
     <div>
@@ -22,11 +22,11 @@ function App() {
       <MainContentWrapper>
         <ListItemsWrapper>
             {data?.results?.map((movie) => {
-                return (<ListItem key={movie.episode_id} episode={movie.episode_id} title={movie.title} date={movie.release_date} setMovieId={setMovieId} />)
+                return (<ListItem key={movie.episode_id} movie={movie} setSelectedMovie={setSelectedMovie} />)
             })}
         </ListItemsWrapper>
         <DescriptionWrapper>
-          <ItemDescription title={data?.results?.[movieId]?.title} description={data?.results?.[movieId]?.opening_crawl} director={data?.results?.[movieId]?.director} />
+          <ItemDescription selectedMovie={selectedMovie} />
         </DescriptionWrapper>
       </MainContentWrapper>
     </div>
