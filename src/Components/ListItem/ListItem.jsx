@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const MovieItemWrapper = styled.div`
   display: flex;
-  border-bottom:   1px solid ;
-    border-bottom-color: gray;
-    padding: 10px 10px;
+  border-bottom: 1px solid;
+  border-bottom-color: gray;
+  padding: 10px 10px;
 `;
 
 const MovieEpisode = styled.span`
@@ -24,18 +24,12 @@ const MovieDate = styled.span`
   text-align: right;
 `;
 
-export default function ListItem () {
-
-    return <MovieItemWrapper>
-            <MovieEpisode>
-                Episode 13
-            </MovieEpisode>
-            <MovieName>
-                Tafos kai Tyfos
-            </MovieName>
-            <MovieDate>
-                1908-03-08
-            </MovieDate>
-        </MovieItemWrapper>
-
+export default function ListItem() {
+  return (
+    <MovieItemWrapper>
+      <MovieEpisode>Episode 13</MovieEpisode>
+      <MovieName>Tafos kai Tyfos</MovieName>
+      <MovieDate>1908-03-08</MovieDate>
+    </MovieItemWrapper>
+  );
 }
