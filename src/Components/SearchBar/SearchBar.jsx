@@ -1,6 +1,8 @@
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Wrapper = styled.div`
   position: relative;
@@ -28,12 +30,26 @@ const FavIcon = styled.span`
 `;
 
 export default function SearchBar() {
+    const [userInput, setUserInput] = useState('');
+
+    function updateUserInput(event) {
+        setUserInput(event.target.value);
+        // if (typeof onChange === "function") {
+        //     onChange(event.target.value);
+        // }
+        //https://stackoverflow.com/questions/55107770/react-controlled-inputs-in-functional-components-using-usestate
+    }
+
+    useEffect(() => {
+        console.log(`${userInput}`);
+    }, [userInput]);
+
   return (
     <Wrapper>
       <FavIcon>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </FavIcon>
-      <TextInput placeholder="Type to search..."></TextInput>
+      <TextInput placeholder="Type to search..." value={userInput} onChange={updateUserInput} ></TextInput>
     </Wrapper>
   );
 }
