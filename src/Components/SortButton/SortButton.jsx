@@ -8,6 +8,7 @@ const Button = styled.button`
     
     &:hover {
         background-color: #FFF;
+        cursor: pointer;
     }
 `;
 
