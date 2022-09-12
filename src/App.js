@@ -1,4 +1,4 @@
-import useFetch from "./Hooks/useFetch";
+import useData from "./Hooks/useData";
 import {useEffect, useState} from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import ListItem from "./Components/ListItem/ListItem";
@@ -12,17 +12,10 @@ import {
 
 
 function App() {
-    const {data, isLoading, isError, setData} = useFetch();
+    const {data, isLoading, isError, setData, sortByEpisode, sortByYear} = useData();
     const [selectedMovie, setSelectedMovie] = useState(0);
     const [userInput, setUserInput] = useState('');
 
-  function sortByEpisode() {
-      data && setData(data.results.sort((a,b) => {
-
-          if (a.episode_id > b.episode_id) return -1
-          if (a.episode_id < b.episode_id) return 1
-      }))
-  }``
 
     function filterMovies (movie) {
         return movie.title.toUpperCase().includes(userInput.toUpperCase());
@@ -31,10 +24,10 @@ function App() {
 
   return (
     <div>
-      <NavBar userInput={userInput} setUserInput={setUserInput} sortByEpisode={sortByEpisode} />
+      <NavBar userInput={userInput} setUserInput={setUserInput} sortByEpisode={sortByEpisode} sortByYear={sortByYear} />
       <MainContentWrapper>
         <ListItemsWrapper>
-            {data?.results?.filter(filterMovies).map((movie) => {
+            {data?.filter(filterMovies).map((movie) => {
                 return (<ListItem key={movie.episode_id} movie={movie} setSelectedMovie={setSelectedMovie} />)
             })}
         </ListItemsWrapper>

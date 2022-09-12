@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button = styled.select`
+const Select = styled.select`
   background-color: #f7f8fa;
   border-radius: 5px;
   border: 3px solid #ccc;
@@ -17,11 +17,16 @@ const Option = styled.option`
 `;
 
 
-export default function SortButton({sortByEpisode}) {
-  return <Button>
-    //defaultValue=selected true
-    <Option disabled="disabled">Sort by...</Option>
-  <Option onClick={sortByEpisode}>Episode</Option>
-  <Option>Year</Option>
-  </Button>;
+export default function SortButton({sortByEpisode, sortByYear}) {
+  return <Select defaultValue="None" onChange={event => {
+    if(event.target.value==='Episode')
+    sortByEpisode();
+
+    if(event.target.value==='Year')
+      sortByYear();
+  }}>
+    <Option value='None' disabled="disabled">Sort by...</Option>
+  <Option value='Episode'>Episode</Option>
+  <Option value='Year'>Year</Option>
+  </Select>;
 }
