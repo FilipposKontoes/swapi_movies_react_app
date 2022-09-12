@@ -12,9 +12,17 @@ import {
 
 
 function App() {
-    const {data, isLoading, isError} = useFetch();
+    const {data, isLoading, isError, setData} = useFetch();
     const [selectedMovie, setSelectedMovie] = useState(0);
     const [userInput, setUserInput] = useState('');
+
+  function sortByEpisode() {
+      data && setData(data.results.sort((a,b) => {
+
+          if (a.episode_id > b.episode_id) return -1
+          if (a.episode_id < b.episode_id) return 1
+      }))
+  }``
 
     function filterMovies (movie) {
         return movie.title.toUpperCase().includes(userInput.toUpperCase());
@@ -23,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <NavBar userInput={userInput} setUserInput={setUserInput} />
+      <NavBar userInput={userInput} setUserInput={setUserInput} sortByEpisode={sortByEpisode} />
       <MainContentWrapper>
         <ListItemsWrapper>
             {data?.results?.filter(filterMovies).map((movie) => {

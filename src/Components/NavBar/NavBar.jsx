@@ -19,10 +19,10 @@ const Navbar = styled.div`
   }
 `;
 
-export default function NavBar({userInput, setUserInput}) {
+export default function NavBar({userInput, setUserInput, sortByEpisode}) {
   return (
     <Navbar>
-      <SortButton />
+      <SortButton sortByEpisode={sortByEpisode}  />
       <SearchBar userInput={userInput} setUserInput={setUserInput} />
     </Navbar>
   );

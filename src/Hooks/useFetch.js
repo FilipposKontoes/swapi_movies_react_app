@@ -24,7 +24,7 @@ const useFetch = () => {
             });
     }, []);
     //οταν deps είναι κενό array τρέχει μόνο μια φορά στο render!
-    return {data, isLoading, isError};
+    return {data, isLoading, isError, setData};
 };
 
 export  default useFetch;
