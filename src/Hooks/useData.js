@@ -43,7 +43,7 @@ const useData = () => {
     }
 
     //οταν deps είναι κενό array τρέχει μόνο μια φορά στο render!
-    return {data, isLoading, isError, setData, sortByEpisode, sortByYear};
+    return {data, isLoading, isError, sortByEpisode, sortByYear};
 };
 
 export  default useData;

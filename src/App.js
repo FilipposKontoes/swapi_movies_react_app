@@ -8,12 +8,11 @@ import {
   MainContentWrapper,
   ListItemsWrapper,
   DescriptionWrapper,
-    NoMovieWrapper
 } from "./styled";
 
 
 function App() {
-    const {data, isLoading, isError, setData, sortByEpisode, sortByYear} = useData();
+    const {data, isLoading, isError, sortByEpisode, sortByYear} = useData();
     const [selectedMovie, setSelectedMovie] = useState(0);
     const [userInput, setUserInput] = useState('');
 
@@ -34,7 +33,7 @@ function App() {
             })}
         </ListItemsWrapper>
         <DescriptionWrapper>
-            {selectedMovie ? <ItemDescription selectedMovie={selectedMovie}/> : <NoMovieWrapper><p>No movie selected</p></NoMovieWrapper>}
+            <ItemDescription selectedMovie={selectedMovie}/>
         </DescriptionWrapper>
       </MainContentWrapper>
     </div>
