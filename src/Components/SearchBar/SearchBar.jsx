@@ -27,7 +27,7 @@ const FavIcon = styled.span`
   color: #ccc;
 `;
 
-export default function SearchBar({userInput, setUserInput}) {
+const SearchBar = ({userInput, setUserInput}) => {
 
     function updateUserInput(event) {
         setUserInput(event.target.value);
@@ -45,3 +45,5 @@ export default function SearchBar({userInput, setUserInput}) {
     </Wrapper>
   );
 }
+
+export default SearchBar;

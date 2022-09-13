@@ -17,7 +17,7 @@ const Option = styled.option`
 `;
 
 
-export default function SortButton({sortByEpisode, sortByYear}) {
+const SortButton = ({sortByEpisode, sortByYear}) => {
   return <Select defaultValue="None" onChange={event => {
     if(event.target.value==='Episode')
     sortByEpisode();
@@ -30,3 +30,5 @@ export default function SortButton({sortByEpisode, sortByYear}) {
   <Option value='Year'>Year</Option>
   </Select>;
 }
+
+export default SortButton;

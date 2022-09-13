@@ -24,7 +24,7 @@ const MovieDate = styled.span`
   text-align: right;
 `;
 
-export default function ListItem({movie, setSelectedMovie}) {
+const ListItem = ({movie, setSelectedMovie}) => {
 
   return (
     <MovieItemWrapper onClick={() => { setSelectedMovie(movie);}}>
@@ -34,3 +34,6 @@ export default function ListItem({movie, setSelectedMovie}) {
     </MovieItemWrapper>
   );
 }
+
+
+export default  ListItem;

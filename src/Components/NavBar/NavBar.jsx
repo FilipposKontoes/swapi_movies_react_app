@@ -17,12 +17,14 @@ const Navbar = styled.div`
   }
 `;
 
-export default function NavBar({userInput, setUserInput, sortByEpisode, sortByYear}) {
+const NavBar = ({userInput, setUserInput, sortByEpisode, sortByYear}) => {
   return (
-      //onClick={sortByEpisode}
     <Navbar>
       <SortButton sortByEpisode={sortByEpisode} sortByYear={sortByYear} />
       <SearchBar userInput={userInput} setUserInput={setUserInput} />
     </Navbar>
   );
 }
+
+
+export default NavBar;

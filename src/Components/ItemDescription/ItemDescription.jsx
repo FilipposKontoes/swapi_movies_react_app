@@ -10,7 +10,7 @@ const MovieFullTitle = styled.h2`
   font-weight: bold;
 `;
 
-export default function ItemDescription({selectedMovie}) {
+ const ItemDescription = ({selectedMovie}) => {
   return (
     <>
         {selectedMovie ?
@@ -20,3 +20,6 @@ export default function ItemDescription({selectedMovie}) {
     </>
   );
 }
+
+
+export default ItemDescription;

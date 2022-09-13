@@ -1,5 +1,5 @@
 import useData from "./Hooks/useData";
-import { ColorRing } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner';
 import {useEffect, useState} from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import ListItem from "./Components/ListItem/ListItem";
@@ -27,7 +27,7 @@ function App() {
         <ListItemsWrapper>
             {isLoading ? <ColorRing/> :
             data?.filter(filterMovies).map((movie) => {
-                return (<ListItem key={movie.episode_id} movie={movie} setSelectedMovie={setSelectedMovie} />)
+                return (<ListItem key={movie.episode_id} movie={movie} setSelectedMovie={setSelectedMovie} />);
             })}
         </ListItemsWrapper>
         <DescriptionWrapper>
