@@ -1,5 +1,3 @@
-//TODO χρησιμοποιώ το import react from react σε κάθε .jsx???
-//TODO Τα ονόματα των μεταβλητών (change navbar me mikro)
 import styled from "styled-components";
 import SearchBar from "../SearchBar/SearchBar";
 import SortButton from "../SortButton/SortButton";

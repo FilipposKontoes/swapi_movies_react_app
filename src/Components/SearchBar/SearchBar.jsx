@@ -20,8 +20,6 @@ const TextInput = styled.input`
   border: 3px solid #ccc;
 `;
 
-//https://stackoverflow.com/questions/45871439/before-and-after-pseudo-classes-used-with-styled-components
-//δεν παίζει το :before
 const FavIcon = styled.span`
   position: absolute;
   left: 22px;
@@ -33,14 +31,9 @@ export default function SearchBar({userInput, setUserInput}) {
 
     function updateUserInput(event) {
         setUserInput(event.target.value);
-        // if (typeof onChange === "function") {
-        //     onChange(event.target.value);
-        // }
-        //https://stackoverflow.com/questions/55107770/react-controlled-inputs-in-functional-components-using-usestate
     }
 
     useEffect(() => {
-        console.log(`${userInput}`);
     }, [userInput]);
 
   return (

@@ -18,14 +18,12 @@ const useData = () => {
                 setIsLoading(false);
             })
             .then((data) => {
-                console.log(data);
                 setData(data.results);
                 setIsLoading(false);
             });
     }, []);
 
     function sortByEpisode() {
-        console.log('sort')
         data && setData([].concat(data).sort((a,b) => {
 
             if (a.episode_id > b.episode_id) return 1
@@ -34,7 +32,6 @@ const useData = () => {
     }
 
     function sortByYear() {
-        console.log('sort2');
         data && setData([].concat(data).sort((a,b) => {
 
             if (Date.parse(a.release_date) > Date.parse(b.release_date)) return -1
@@ -42,7 +39,6 @@ const useData = () => {
         }))
     }
 
-    //οταν deps είναι κενό array τρέχει μόνο μια φορά στο render!
     return {data, isLoading, isError, sortByEpisode, sortByYear};
 };
 

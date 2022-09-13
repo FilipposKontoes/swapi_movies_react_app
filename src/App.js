@@ -16,11 +16,9 @@ function App() {
     const [selectedMovie, setSelectedMovie] = useState(0);
     const [userInput, setUserInput] = useState('');
 
-
     function filterMovies (movie) {
         return movie.title.toUpperCase().includes(userInput.toUpperCase());
     }
-    // useEffect(() => {console.log(movieId)},[movieId]);
 
   return (
     <div>
