@@ -1,6 +1,6 @@
 import {NoMovieWrapper} from "../../styled";
 import styled from "styled-components";
-
+import PropTypes from 'prop-types';
 
 const ItemDescriptionWrapper = styled.div`
   padding: 10px 40px;
@@ -9,6 +9,8 @@ const ItemDescriptionWrapper = styled.div`
 const MovieFullTitle = styled.h2`
   font-weight: bold;
 `;
+
+
 
  const ItemDescription = ({selectedMovie}) => {
   return (
@@ -21,5 +23,12 @@ const MovieFullTitle = styled.h2`
   );
 }
 
+ItemDescription.propTypes = {
+    optionalObjectWithShape: PropTypes.shape({
+        title: PropTypes.string,
+        opening_crawl: PropTypes.string,
+        director: PropTypes.string
+    })
+};
 
 export default ItemDescription;

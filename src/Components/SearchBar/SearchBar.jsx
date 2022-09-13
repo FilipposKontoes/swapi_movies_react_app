@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import styled from "styled-components";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
 
 
 const Wrapper = styled.div`
@@ -45,5 +46,10 @@ const SearchBar = ({userInput, setUserInput}) => {
     </Wrapper>
   );
 }
+
+SearchBar.propTypes = {
+    userInput: PropTypes.string,
+    setUserInput: PropTypes.func
+};
 
 export default SearchBar;

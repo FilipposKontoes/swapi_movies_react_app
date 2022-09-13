@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
+import ItemDescription from "../ItemDescription/ItemDescription";
 
 const MovieItemWrapper = styled.div`
   display: flex;
@@ -35,5 +37,13 @@ const ListItem = ({movie, setSelectedMovie}) => {
   );
 }
 
+ListItem.propTypes = {
+    optionalObjectWithShape: PropTypes.shape({
+        episode_id: PropTypes.number,
+        title: PropTypes.string,
+        release_date: PropTypes.string
+    }),
+    setSelectedMovie: PropTypes.func
+};
 
 export default  ListItem;

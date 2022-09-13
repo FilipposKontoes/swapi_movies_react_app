@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import SearchBar from "../SearchBar/SearchBar";
 import SortButton from "../SortButton/SortButton";
+import PropTypes from "prop-types";
+import ListItem from "../ListItem/ListItem";
 
 const Navbar = styled.div`
   background-color: #f7f8fa;
@@ -25,6 +27,13 @@ const NavBar = ({userInput, setUserInput, sortByEpisode, sortByYear}) => {
     </Navbar>
   );
 }
+
+Navbar.propTypes = {
+    userInput: PropTypes.string,
+    setUserInput: PropTypes.string,
+    sortByEpisode: PropTypes.func,
+    sortByYear: PropTypes.func
+};
 
 
 export default NavBar;
