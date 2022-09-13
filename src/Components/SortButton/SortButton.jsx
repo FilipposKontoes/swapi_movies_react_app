@@ -20,7 +20,7 @@ const Option = styled.option`
 
 
 const SortButton = ({sortByEpisode, sortByYear}) => {
-  return <Select defaultValue="None" onChange={event => {
+  return <Select data-testid="noOptionSelected" defaultValue="None" onChange={event => {
     if(event.target.value==='Episode')
     sortByEpisode();
 

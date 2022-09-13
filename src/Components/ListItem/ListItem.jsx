@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import PropTypes from 'prop-types';
-import ItemDescription from "../ItemDescription/ItemDescription";
 
 const MovieItemWrapper = styled.div`
   display: flex;
