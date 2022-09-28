@@ -13,7 +13,7 @@ import {
 
 function App() {
     const {data, isLoading, sortByEpisode, sortByYear} = useData();
-    const [selectedMovie, setSelectedMovie] = useState(0);
+    const [selectedMovie, setSelectedMovie] = useState({});
     const [userInput, setUserInput] = useState('');
 
     function filterMovies (movie) {
