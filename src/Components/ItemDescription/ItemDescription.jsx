@@ -21,7 +21,7 @@ const MovieFullTitle = styled.h2`
       <span>Directed by: {selectedMovie.director}</span></ItemDescriptionWrapper> : <NoMovieWrapper data-testid={'noMovieDescription'}><p>No movie selected</p></NoMovieWrapper>}
     </>
   );
-}
+};
 
 ItemDescription.propTypes = {
     optionalObjectWithShape: PropTypes.shape({

@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import styled from "styled-components";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +45,7 @@ const SearchBar = ({userInput, setUserInput}) => {
       <TextInput placeholder="Type to search..." value={userInput} onChange={updateUserInput} ></TextInput>
     </Wrapper>
   );
-}
+};
 
 SearchBar.propTypes = {
     userInput: PropTypes.string,

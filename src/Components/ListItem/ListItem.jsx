@@ -34,7 +34,7 @@ const ListItem = ({movie, setSelectedMovie}) => {
       <MovieDate>{movie?.release_date}</MovieDate>
     </MovieItemWrapper>
   );
-}
+};
 
 ListItem.propTypes = {
     optionalObjectWithShape: PropTypes.shape({

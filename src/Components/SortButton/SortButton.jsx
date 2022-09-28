@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import SearchBar from "../SearchBar/SearchBar";
+
 
 const Select = styled.select`
   background-color: #f7f8fa;
@@ -31,7 +31,7 @@ const SortButton = ({sortByEpisode, sortByYear}) => {
   <Option value='Episode'>Episode</Option>
   <Option value='Year'>Year</Option>
   </Select>;
-}
+};
 
 SortButton.propTypes = {
   sortByEpisode: PropTypes.func,

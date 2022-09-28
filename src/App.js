@@ -1,6 +1,6 @@
 import useData from "./Hooks/useData";
 import { ColorRing } from 'react-loader-spinner';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import ListItem from "./Components/ListItem/ListItem";
 import ItemDescription from "./Components/ItemDescription/ItemDescription";
@@ -12,7 +12,7 @@ import {
 
 
 function App() {
-    const {data, isLoading, isError, sortByEpisode, sortByYear} = useData();
+    const {data, isLoading, sortByEpisode, sortByYear} = useData();
     const [selectedMovie, setSelectedMovie] = useState(0);
     const [userInput, setUserInput] = useState('');
 
